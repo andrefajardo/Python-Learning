@@ -1,0 +1,60 @@
+##################################################################################################
+###
+###     Curso em Vídeo - Curso de Python - Mundo 2
+###     Prof. Gustavo Guanabara
+###
+###     Module 2 Description: A set of exercises about repetition and decision structures used
+###     alone or nested.
+###
+###     student: André Fajardo
+###
+##################################################################################################
+
+####################################   Imported Modules  #########################################
+## Import Exemple ##
+from time import sleep
+import random
+######################################  Inicial Label  ###########################################
+frame = '==='
+title = ' ANÁLISE DE SEQUÊNCIA '
+
+print( frame * 30)
+print('===', ' ' * 84, '===', sep='')
+print(f"=== {title:^82} ===")
+print('===', ' ' * 84, '===', sep='')
+print(frame * 30, '\n')
+
+###################################   Colors Arguments   #########################################
+
+### The code formatation ASCII is: \033["cod style";"cod text color";"cod background color"m
+colors = {
+    'backGreen':'\033[0;;42m',
+    'greenBold':'\033[1;32m',
+    'backYellow':'\033[0;;43m',
+    'red':'\033[0;31m',
+    'redBold':'\033[1;31m',
+    'blue':'\033[0;34m',
+    'inverted':'\033[7m',
+    'clean':'\033[m'
+}
+
+######################################## Variables ################################################
+
+endCod = 999
+num = 0
+sumNumbers = 0
+
+########################################### Code ##################################################
+
+print('ANÁLISE DE VALORES DIGITADOS \n')
+
+print('==='*30)
+
+while num != endCod:
+    sumNumbers += num
+    sleep(1)
+    print('\nContinue...\n')
+    num = int(input('Digite um número inteiro [999 - Interrompe]: ').strip())
+
+print('\n===> ACABOU <===\n'
+      '\nA soma dos valores digitados é {}{}{}.'.format(colors['redBold'], sumNumbers, colors['clean']))
