@@ -1,0 +1,72 @@
+##################################################################################################
+###
+###     Curso em Vídeo - Curso de Python - Mundo 3
+###     Prof. Gustavo Guanabara
+###
+###     Module 3 Description: A set of exercises about data structure, functions, modules and package, error handling, etc.
+###
+###     student:  André Fajardo
+###
+##################################################################################################
+####################################   Imported Modules  #########################################
+from operator import index
+
+# Import exemples
+# from datetime import datetime
+# from itertools import count
+
+######################################  Inicial Label  ###########################################
+frame = '==='
+title = ' ANALISA LISTA '
+
+print( frame * 30)
+print('===', ' ' * 84, '===', sep='')
+print(f"=== {title:^82} ===")
+print('===', ' ' * 84, '===', sep='')
+print(frame * 30, '\n')
+
+###################################   Colors Arguments   #########################################
+
+### The code formatation ASCII is: \033["cod style";"cod text color";"cod background color"m
+colors = {
+    'backGreen':'\033[0;;42m',
+    'greenBold':'\033[1;32m',
+    'backYellow':'\033[0;;43m',
+    'red':'\033[0;31m',
+    'redBold':'\033[1;31m',
+    'blue':'\033[0;34m',
+    'inverted':'\033[7m',
+    'clean':'\033[m'
+}
+
+########################################### Variables ############################################
+count = 0
+numbers = []
+numFives = []
+########################################### Code #################################################
+
+print('Informe valores para análise: ')
+
+while True:
+    num = int(input('Digite um número [0-10]: ').strip())
+    if num in numbers:
+        print(f'O número {colors["redBold"]}{num}{colors["clean"]} já foi adicionado. Tente outro número.')
+        continue
+    else:
+        numbers.append(num)
+    count += 1
+    option = str(input('Deseja continuar? [S/N]: ').strip().upper()[0])
+    if option == 'N':
+        break
+print(f'Foram digitados ao todo {count} números.')
+print('Os valores digitados em ordem decrescente são: ', end='')
+numbers.sort(reverse=True)
+for pos, value in enumerate(numbers):
+    print(f'{colors["blue"]}{value}{colors["clean"]}', end=' ')
+    if value == 5:
+        numFives.append(pos)
+if len(numFives) != 0:
+    print(f'\nO valor {colors["greenBold"]}5{colors["clean"]} foi encontrado na lista.'
+      f' Na posição {colors["greenBold"]}{numFives}{colors["clean"]}.')
+else:
+    print(f'\nO valor {colors["redBold"]}5{colors["clean"]} não foi encontrado na lista.')
