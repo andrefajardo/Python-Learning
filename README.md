@@ -37,8 +37,8 @@ O repositório está em fase final, com foco atual na **no exercício - 115**: C
 O sistema de cadastro atual permite:
 - [x] **Menu Principal:** Interface amigável com tratamento de cores ANSI.
 - [x] **Validação:** Sistema robusto contra entradas de dados inválidas (letras onde deveria haver números, etc).
-- [ ] **Listagem:** Leitura e exibição formatada de dados contidos em arquivo. (Em progresso)
-- [ ] **Cadastro:** Persistência de novos usuários em arquivo de texto. (Em progresso)
+- [x] **Listagem:** Leitura e exibição formatada de dados contidos em arquivo.
+- [x] **Cadastro:** Persistência de novos usuários em arquivo de texto.
 
 ---
 
